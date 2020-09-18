@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkPrimeNum</title>
+</head>
+<body>
+<p>
+    <label>Number</label>
+    <input id="inputNum" type="number" placeholder="Num"
+           oninput="checkPrimeNum(this.value)"
+           onchange="checkPrimeNum(this.value)">
+</p>
+<p>prime? <span id="result"></span></p>
+
+    <script>
+
+
+        function checkPrimeNum(Num){
+
+            let isPrime = true;
+            if(Num <= 1){
+                isPrime = false
+            } else {
+            for (var i = 2; i < Num; i ++){
+                    if (Num % i === 0) {
+                        isPrime = false;
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = isPrime;
+        }
+    </script>
+</body>
+
+</html>
